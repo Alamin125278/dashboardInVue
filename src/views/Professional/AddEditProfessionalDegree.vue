@@ -4,14 +4,14 @@
       <h4
         class="w-full h-10 bg-cyan-500 flex items-center text-white p-4 rounded-md"
       >
-        Training/Workshop
+        {{ edit == true ? "Edit" : "Add" }}Professional Degree
       </h4>
     </div>
     <div class="w-full">
       <form class="my-5 max-w-screen-2xl mx-auto space-y-6 px-10">
         <div class="flex items-center">
           <label class="w-96 text-right" for="firstName">
-            Title of training/workshop:</label
+            Name of professional degree:</label
           >
           <input
             class="border ml-8 border-gray-400 block px-2 py-1 mx-4 w-full rounded-md focus:outline-none"
@@ -20,8 +20,15 @@
         </div>
         <div class="flex items-center">
           <label class="w-96 text-right" for="firstName"
-            >Institute name :</label
+            >Educational institute :</label
           >
+          <input
+            class="border ml-8 border-gray-400 block px-2 py-1 mx-4 w-full rounded-md focus:outline-none"
+            type="text"
+          />
+        </div>
+        <div class="flex items-center">
+          <label class="w-96 text-right" for="firstName">Duration :</label>
           <input
             class="border ml-8 border-gray-400 block px-2 py-1 mx-4 w-full rounded-md focus:outline-none"
             type="text"
@@ -29,7 +36,7 @@
         </div>
         <div class="flex items-center">
           <label class="w-96 text-right" for="firstName"
-            >Major topics covered :</label
+            >Class/Grade/Percentage :</label
           >
           <input
             class="border ml-8 border-gray-400 block px-2 py-1 mx-4 w-full rounded-md focus:outline-none"
@@ -37,16 +44,7 @@
           />
         </div>
         <div class="flex items-center">
-          <label class="w-96 text-right" for="firstName"
-            >Training duration :</label
-          >
-          <input
-            class="border ml-8 border-gray-400 block px-2 py-1 mx-4 w-full rounded-md focus:outline-none"
-            type="text"
-          />
-        </div>
-        <div class="flex items-center">
-          <label class="w-96 text-right" for="firstName">Training Year:</label>
+          <label class="w-96 text-right" for="firstName">Major/Area:</label>
           <input
             class="border ml-8 border-gray-400 block px-2 py-1 mx-4 w-full rounded-md focus:outline-none"
             type="text"
@@ -54,11 +52,13 @@
         </div>
         <div class="px-4 mx-4 flex justify-center">
           <button
+            @click="saveData"
             class="mx-5 rounded-md bg-cyan-500 p-2 text-white hover:bg-cyan-100 hover:text-black duration-500"
           >
             Save
           </button>
           <button
+            @click="resetData"
             class="mx-5 rounded-md bg-cyan-500 text-white p-2 hover:bg-cyan-100 hover:text-black duration-500"
           >
             Reset
@@ -76,6 +76,41 @@
 
 <script>
 export default {
-  name: "AddTraining",
+  name: "AddProfessionalDegree",
+  props: {
+    edit: Boolean,
+  },
+  data() {
+    return {
+      Name: "",
+      institute: "",
+      Duration: "",
+      Grade: "",
+      Area: "",
+    };
+  },
+  methods: {
+    saveData(e) {
+      e.preventDefault();
+      let saveDataDetails = {
+        Name: this.Name,
+        institute: this.institute,
+        Duration: this.Duration,
+        Grade: this.Grade,
+        Area: this.Area,
+      };
+      console.log(saveDataDetails);
+    },
+    resetData(e) {
+      e.preventDefault();
+      [
+        (this.Name = ""),
+        (this.institute = ""),
+        (this.Duration = ""),
+        (this.Grade = ""),
+        (this.Area = ""),
+      ];
+    },
+  },
 };
 </script>

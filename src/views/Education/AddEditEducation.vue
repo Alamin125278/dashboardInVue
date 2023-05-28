@@ -127,9 +127,6 @@ export default {
       resultGradeSelect: "",
     };
   },
-  mounted() {
-    console.log(this.$route.params.id);
-  },
   methods: {
     saveData(e) {
       e.preventDefault();

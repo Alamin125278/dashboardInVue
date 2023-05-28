@@ -74,7 +74,7 @@ export default {
       this.isModalOpen = true;
     },
     editData(data) {
-      console.log("editing...", data);
+      this.$router.push({ name: "editLanguage", params: { id: 1 } });
     },
   },
 };

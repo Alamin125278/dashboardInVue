@@ -3,22 +3,28 @@ import PersonalModule from "../views/Personal/PersonalModule.vue";
 import Personal from "../views/Personal/Personal.vue";
 import EducationModule from "../views/Education/EducationModule.vue";
 import AddEditEducation from "../views/Education/AddEditEducation.vue";
-import AddThesis from "../views/Education/AddThesis.vue";
+import AddEditThesis from "../views/Education/AddEditThesis.vue";
 import Education from "../views/Education/Education.vue";
-import Employment from "../views/Employment.vue";
+import EmploymentModule from "../views/Employment/EmploymentModule.vue";
+import AddEditEmployment from "../views/Employment/AddEditEmployment.vue";
+import Employment from "../views/Employment/Employment.vue";
 import ProfessionalModule from "../views/Professional/ProfessionalModule.vue";
-import AddProfessionalDegree from "../views/Professional/AddProfessionalDegree.vue";
+import AddEditProfessionalDegree from "../views/Professional/AddEditProfessionalDegree.vue";
 import ProfessionalDegree from "../views/Professional/ProfessionalDegree.vue";
 import TrainingModule from "../views/Training/TrainingModule.vue";
 import Training from "../views/Training/Training.vue";
-import AddTraining from "../views/Training/AddTraining.vue";
+import AddEditTraining from "../views/Training/AddEditTraining.vue";
 import LanguageModule from "../views/Languagess/LanguageModule.vue";
-import AddLanguage from "../views/Languagess/AddLanguage.vue";
+import AddEditLanguage from "../views/Languagess/AddEditLanguage.vue";
 import Language from "../views/Languagess/Language.vue";
 import ReferencesModule from "../views/Reference/ReferencesModule.vue";
-import AddReference from "../views/Reference/AddReference.vue";
+import AddEditReference from "../views/Reference/AddEditReference.vue";
 import References from "../views/Reference/References.vue";
-import Others from "../views/Others.vue";
+import OthersModule from "../views/Others/othersModule.vue";
+import AddEditOthers from "../views/Others/AddEditOthers.vue";
+import AddEditPublication from "../views/Others/AddEditPublication.vue";
+import AddEditMembers from "../views/Others/AddEditMembers.vue";
+import Others from "../views/Others/others.vue";
 const routes = [
   {
     path: "/",
@@ -60,13 +66,47 @@ const routes = [
       },
       {
         path: "/education/add-thesis",
-        component: AddThesis,
+        component: AddEditThesis,
+        name: "addThesis",
+        props: {
+          edit: false,
+        },
+      },
+      {
+        path: "/education/edit-thesis/:id",
+        component: AddEditThesis,
+        name: "editThesis",
+        props: {
+          edit: true,
+        },
       },
     ],
   },
   {
     path: "/employment",
-    component: Employment,
+    component: EmploymentModule,
+    children: [
+      {
+        path: "/employment",
+        component: Employment,
+      },
+      {
+        path: "/employment/add-employment",
+        component: AddEditEmployment,
+        name: "addEmployment",
+        props: {
+          edit: false,
+        },
+      },
+      {
+        path: "/employment/edit-employment/:id",
+        component: AddEditEmployment,
+        name: "editEmployment",
+        props: {
+          edit: true,
+        },
+      },
+    ],
   },
   {
     path: "/professional",
@@ -78,7 +118,19 @@ const routes = [
       },
       {
         path: "/professional/add-professional-degree",
-        component: AddProfessionalDegree,
+        component: AddEditProfessionalDegree,
+        name: "addProfessionalDegree",
+        props: {
+          edit: false,
+        },
+      },
+      {
+        path: "/professional/edit-professional-degree/:id",
+        component: AddEditProfessionalDegree,
+        name: "editProfessionalDegree",
+        props: {
+          edit: true,
+        },
       },
     ],
   },
@@ -92,7 +144,19 @@ const routes = [
       },
       {
         path: "/training/add-training",
-        component: AddTraining,
+        component: AddEditTraining,
+        name: "addTraining",
+        props: {
+          edit: false,
+        },
+      },
+      {
+        path: "/training/edit-training/:id",
+        component: AddEditTraining,
+        name: "editTraining",
+        props: {
+          edit: true,
+        },
       },
     ],
   },
@@ -106,7 +170,19 @@ const routes = [
       },
       {
         path: "/language/add-language",
-        component: AddLanguage,
+        component: AddEditLanguage,
+        name: "addLanguage",
+        props: {
+          edit: false,
+        },
+      },
+      {
+        path: "/language/edit-language/:id",
+        component: AddEditLanguage,
+        name: "editLanguage",
+        props: {
+          edit: true,
+        },
       },
     ],
   },
@@ -124,13 +200,79 @@ const routes = [
       },
       {
         path: "/references/add-reference",
-        component: AddReference,
+        component: AddEditReference,
+        name: "addReference",
+        props: {
+          edit: false,
+        },
+      },
+      {
+        path: "/references/edit-reference/:id",
+        component: AddEditReference,
+        name: "editReference",
+        props: {
+          edit: true,
+        },
       },
     ],
   },
   {
     path: "/others",
-    component: Others,
+    component: OthersModule,
+    children: [
+      {
+        path: "/others",
+        component: Others,
+      },
+      {
+        path: "/others/add-others",
+        component: AddEditOthers,
+        name: "addOthers",
+        props: {
+          edit: false,
+        },
+      },
+      {
+        path: "/others/edit-others/:id",
+        component: AddEditOthers,
+        name: "editOthers",
+        props: {
+          edit: true,
+        },
+      },
+      {
+        path: "/others/add-publication",
+        component: AddEditPublication,
+        name: "addPublication",
+        props: {
+          edit: false,
+        },
+      },
+      {
+        path: "/others/add-members/:id",
+        component: AddEditPublication,
+        name: "editPublication",
+        props: {
+          edit: true,
+        },
+      },
+      {
+        path: "/others/add-members",
+        component: AddEditMembers,
+        name: "addMembers",
+        props: {
+          edit: false,
+        },
+      },
+      {
+        path: "/others/edit-members/:id",
+        component: AddEditMembers,
+        name: "editMembers",
+        props: {
+          edit: true,
+        },
+      },
+    ],
   },
 ];
 export default createRouter({

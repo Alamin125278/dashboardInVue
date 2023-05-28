@@ -119,7 +119,7 @@ export default {
       console.log(data);
     },
     editData(data) {
-      console.log("editing...", data);
+      this.$router.push({ name: "editProfessionalDegree", params: { id: 1 } });
     },
   },
 };

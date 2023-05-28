@@ -130,11 +130,11 @@ export default {
       console.log("editing...", data.level);
       this.$router.push({ name: "editEducation", params: { id: 1 } });
     },
-    thesisDeleteData(data) {
-      console.log(this.data);
+    thesisDeleteData(newData) {
+      this.isModalOpen = true;
     },
     thesisEditData(data) {
-      this.isModalOpen = true;
+      this.$router.push({ name: "editThesis", params: { id: 2 } });
     },
   },
 };
@@ -188,15 +188,6 @@ export default {
       @deleteData="deleteData"
       @editData="editData"
     />
-    <data-table
-      :headers="newTableHeaders"
-      :dataList="newData"
-      :actionArray="newActionArray"
-      isSerialNoShow
-      isActionShow
-      @deleteData="deleteData"
-      @editData="editData"
-    />
     <div class="my-5">
       <router-link
         class="px-5 py-3 my-5 bg-cyan-500 rounded-lg text-white duration-500 hover:text-black hover:bg-cyan-100"
@@ -207,7 +198,7 @@ export default {
     <data-table
       :headers="newTableHeaders"
       :dataList="newData"
-      :actionArray="actionArray"
+      :actionArray="newActionArray"
       isSerialNoShow
       isActionShow
       @thesisDeleteData="thesisDeleteData"

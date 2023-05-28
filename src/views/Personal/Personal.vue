@@ -130,7 +130,7 @@ export default {
 
 <template>
   <div class="bg-gray-50">
-    <div class="border ml-8 mx-2">
+    <div class="border sm:ml-8 mx-2">
       <h4
         class="w-full h-10 bg-cyan-500 flex items-center text-white p-4 rounded-md"
       >

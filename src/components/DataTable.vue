@@ -50,6 +50,11 @@ export default {
 .datatable {
   max-height: 400px;
   overflow-y: auto;
+  width: 100%;
+  overflow-x: scroll;
+}
+table {
+  min-width: 100px;
 }
 tr td:nth-child(1) {
   padding-left: 4px;

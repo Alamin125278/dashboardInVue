@@ -1,6 +1,12 @@
 <script>
 export default {
-  name: "AddLanguage",
+  name: "AddEditLanguage",
+  props: {
+    edit: Boolean,
+  },
+  mounted() {
+    console.log(this.$route.params.id);
+  },
   data() {
     return {
       language: "",
