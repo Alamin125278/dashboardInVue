@@ -9,7 +9,7 @@ export default {
 <template>
   <nav>
     <div class="flex justify-between mx-2 my-5">
-      <img src="../assets/logo .png" alt="" />
+      <img src="../assets/logo.png" alt="" />
       <i
         @click="$emit('close')"
         class="fa-solid fa-circle-xmark text-3xl text-cyan-500"

@@ -69,25 +69,10 @@ export default {
       class="top-0 left-0 bottom-0 right-0 bg-slate-500 fixed z-10 opacity-50"
     ></div>
     <div class="sm:w-9/12 mx-auto w-11/12">
-      <!-- <header
-        class="block sm:flex justify-between sm:h-32 md:h-32 h-32 items-center text-center relative w-full py-3"
-      >
-        <img
-          class="absolute left-1/2 -translate-x-1/2 sm:left-0 md:left-0 sm:translate-x-0"
-          src="./assets/logo .png"
-          alt=""
-          srcset=""
-        />
-        <h2
-          class="sm:text-4xl md:text-2xl bottom-0 sm:top-1/2 md:top-1/2 text-center text-cyan-500 font-mono font-semibold sm:w-auto absolute sm:right-12"
-        >
-          Talent Acquisition System
-        </h2>
-      </header> -->
       <header
         class="flex sm:justify-between h-24 items-center sm:flex-row flex-col p-4"
       >
-        <img class="" src="./assets/logo .png" alt="" srcset="" />
+        <img class="" src="./assets/logo.png" alt="" srcset="" />
         <h2 class="sm:text-4xl text-2xl text-cyan-500">
           Talent Acquisition System
         </h2>
